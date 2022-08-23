@@ -6,3 +6,17 @@ Things to complete
   - so if I access /container1 it should be routed to container 1 and same thing for container 2
 - storage folder should be available even after the containers are destroyed and recreated
 
+-------------------------------------------------------------------------------------
+
+Resolution:
+
+- Need to build docker image and push it to dockerhub (tushar887/eks-test:latest).
+- Execute cmds 
+	docker build -t eks . 
+	docker tag eks:latest <dockerhub_username>/<repo_name>:<tag>
+	docker push <dockerhub_username>/<repo_name>:<tag>
+- Created terraform folder which includes creation of infrastructue for EKS.
+- Execute cmds terraform initialize, terraform plan, terraform apply
+- Created Kubernetes folder which includes yaml scripts for pod deployment.
+- Created Persistent Volume and attached its claim to pods so we will not loose data.
+- ingress.yml having path based routing for different containers. We have to create nginx-ingress controller to access application outside cluster.
