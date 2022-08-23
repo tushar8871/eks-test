@@ -12,9 +12,14 @@ Resolution:
 
 - Need to build docker image and push it to dockerhub (tushar887/eks-test:latest).
 - Execute cmds 
-	docker build -t eks . 
+	
+    docker build -t eks . 
+    
 	docker tag eks:latest <dockerhub_username>/<repo_name>:<tag>
-	docker push <dockerhub_username>/<repo_name>:<tag>
+	
+    docker push <dockerhub_username>/<repo_name>:<tag>
+
+
 - Created terraform folder which includes creation of infrastructue for EKS.
 - Execute cmds terraform initialize, terraform plan, terraform apply
 - Created Kubernetes folder which includes yaml scripts for pod deployment.
